@@ -27,7 +27,7 @@ app.get("/api/prs", (req, res) => {
 });
 
 // Serve static files from the frontend build (dist folder)
-app.use(express.static(path.join(__dirname, "../weave_frontend/dist")));
+app.use(express.static(path.join(__dirname, "dist")));
 
 // For any non-API route, serve the React app (SPA fallback)
 // Express 5 doesn't support "*" wildcard, so use a middleware function instead
@@ -37,7 +37,7 @@ app.use((req, res, next) => {
     return next();
   }
   // Serve index.html for all other routes (SPA fallback)
-  res.sendFile(path.join(__dirname, "../weave_frontend/dist/index.html"));
+  res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
 const PORT = process.env.PORT || 3000;
