@@ -3,3 +3,5 @@ backend/.env
 weave_frontend/.env
 backend/node_modules
 weave_frontend/node_modules
+temp_auto_push.bat
+temp_interactive_push.bat
